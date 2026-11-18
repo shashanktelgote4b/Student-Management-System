@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main()
+{
+    char name[50];
+    int roll, i;
+    float marks[5], total = 0, percentage;
+
+    printf("Enter student name: ");
+    scanf("%s", name);
+
+    printf("Enter roll number: ");
+    scanf("%d", &roll);
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("Enter subject %d marks: ", i+1);
+        scanf("%f", &marks[i]);
+
+        total = total + marks[i];
+    }
+
+    percentage = total / 5;
+
+    printf("\n===== STUDENT RESULT =====\n");
+    printf("Name: %s\n", name);
+    printf("Roll Number: %d\n", roll);
+    printf("Total Marks: %.2f\n", total);
+    printf("Percentage: %.2f%%\n", percentage);
+
+    if(percentage >= 75)
+        printf("Grade: A");
+    else if(percentage >= 60)
+        printf("Grade: B");
+    else if(percentage >= 40)
+        printf("Grade: C");
+    else
+        printf("Grade: Fail");
+
+    return 0;
+}
